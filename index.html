@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nakum Cakes – Taste the Joy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b2b2e;
+      color: #f5e6d3;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #072023;
+    }
+    header img {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #d9b382;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+      background-color: #0f3b3f;
+    }
+    nav a {
+      color: #f5e6d3;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #d9b382;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .cakes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .cake-card {
+      background-color: #123f44;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .cake-card h3 {
+      margin-top: 10px;
+      color: #d9b382;
+    }
+    .cake-card p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #072023;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #d9b382;
+      color: #072023;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #f0cfa0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="IMG_20251224_121901.jpg" alt="Nakum Cakes Logo" />
+  <h1>NAKUM CAKES</h1>
+  <p>Taste the Joy</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#cakes">Our Cakes</a>
+  <a href="#contact">Contact</a>
+  <a href="https://wa.me/916355667895?text=Hello%20Nakum%20Cakes%2C%20I%20want%20to%20order%20a%20cake" target="_blank">Order on WhatsApp</a>
+  <a href="https://instagram.com/nakumcakes" target="_blank">Instagram</a>
+</nav>
+
+<section id="about">
+  <h2>About Nakum Cakes</h2>
+  <p>
+    Nakum Cakes is all about creating moments of happiness with delicious, beautifully crafted cakes. 
+    From birthdays to weddings and every celebration in between, we bake with love, quality ingredients, 
+    and a passion for perfection.
+  </p>
+</section>
+
+<section id="cakes">
+  <h2>Our Popular Cakes</h2>
+  <div class="cakes">
+    <div class="cake-card">
+      <h3>Chocolate Delight</h3>
+      <p>Rich, moist chocolate cake layered with smooth chocolate ganache.</p>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+    <div class="cake-card">
+      <h3>Vanilla Cream</h3>
+      <p>Classic vanilla sponge with fresh cream and a soft, sweet finish.</p>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+    <div class="cake-card">
+      <h3>Red Velvet</h3>
+      <p>Luxurious red velvet cake with creamy cheese frosting.</p>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+    <div class="cake-card">
+      <h3>Custom Cakes</h3>
+      <p>Designed specially for your events, themes, and celebrations.</p>
+      <a class="btn" href="#contact">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Custom Cake Order</h2>
+  <p>Fill details below and click submit to send order on WhatsApp.</p>
+
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Your Name" required style="padding:10px;width:100%;margin:8px 0;" />
+    <input type="text" id="cake" placeholder="Cake Type (Chocolate / Custom)" required style="padding:10px;width:100%;margin:8px 0;" />
+    <input type="text" id="date" placeholder="Delivery Date" required style="padding:10px;width:100%;margin:8px 0;" />
+    <textarea id="message" placeholder="Message on Cake / Details" style="padding:10px;width:100%;margin:8px 0;"></textarea>
+    <button class="btn" type="submit">Send Order on WhatsApp</button>
+  </form>
+</section>
+
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById('name').value;
+  var cake = document.getElementById('cake').value;
+  var date = document.getElementById('date').value;
+  var msg = document.getElementById('message').value;
+
+  var text = `Hello Nakum Cakes,%0AName: ${name}%0ACake: ${cake}%0ADate: ${date}%0ADetails: ${msg}`;
+  window.open(`https://wa.me/916355667895?text=${text}`, '_blank');
+}
+</script>
+
+<footer>
+  <p>© 2025 Nakum Cakes. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
